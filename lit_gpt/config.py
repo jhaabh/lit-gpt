@@ -325,6 +325,28 @@ open_LLaMA = [
 ]
 configs.extend(open_LLaMA)
 
+###############
+# Tiny LLaMA
+###############
+tiny_LLaMA = [
+    # https://huggingface.co/PY007/TinyLlama-1.1B-intermediate-step-480k-1T/blob/main/config.json
+    dict(
+        org="PY007",
+        name="TinyLlama-1.1B-intermediate-step-480k-1T",
+        block_size=2048,
+        vocab_size=32000,
+        n_layer=22,
+        n_embd=2048,
+        rotary_percentage=1.0,  # Assuming the rotary percentage remains consistent with other llama examples
+        parallel_residual=False,  # Assuming this value remains consistent with other llama examples
+        bias=False,  # Assuming this value remains consistent with other llama examples
+        _norm_class="RMSNorm",
+        norm_eps=1e-05,
+        _mlp_class="LLaMAMLP",
+        intermediate_size=5632,
+    )
+]
+configs.extend(tiny_LLaMA)
 
 ###############
 # LMSYS Vicuna
