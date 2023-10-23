@@ -336,14 +336,23 @@ tiny_LLaMA = [
         block_size=2048,
         vocab_size=32000,
         n_layer=22,
+        n_head=32,
         n_embd=2048,
         rotary_percentage=1.0,  # Assuming the rotary percentage remains consistent with other llama examples
         parallel_residual=False,  # Assuming this value remains consistent with other llama examples
         bias=False,  # Assuming this value remains consistent with other llama examples
+        lm_head_bias=False,  # Based on the error message, it seems the model doesn't expect a bias for the lm_head.
+        n_query_groups=32,  # Assumed based on the error message
+        shared_attention_norm=False,  # Assumed based on the error message
         _norm_class="RMSNorm",
         norm_eps=1e-05,
         _mlp_class="LLaMAMLP",
         intermediate_size=5632,
+        gelu_approximate="none",  # Assumed based on the error message
+        rope_condense_ratio=1,  # Assumed based on the error message
+        rope_base=10000,  # Assumed based on the error message
+        head_size=64,  # Assumed based on the error message
+        rope_n_elem=64  # Assumed based on the error message
     )
 ]
 configs.extend(tiny_LLaMA)
