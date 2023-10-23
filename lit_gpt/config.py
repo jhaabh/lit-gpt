@@ -351,7 +351,6 @@ tiny_LLaMA = [
         gelu_approximate="none",  # Assumed based on the error message
         rope_condense_ratio=1,  # Assumed based on the error message
         rope_base=10000,  # Assumed based on the error message
-        rope_n_elem=64  # Assumed based on the error message
     )
 ]
 configs.extend(tiny_LLaMA)
